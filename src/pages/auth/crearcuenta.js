@@ -2,7 +2,6 @@ import React , { useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import APIInvoke from '../../utils/APIInvoke';
 import md5 from 'md5';
-import swai from 'sweetalert'
 
 const CrearCuenta = () => {
     const [usuario, setUsuario] = useState({
@@ -11,10 +10,11 @@ const CrearCuenta = () => {
         numIdentificacionPa:'',
         email:'',
         numero:'',
+        epsPa:'',
         password:'',
         confirmar:''
     })
-    const { nombrePa,apellidoPa,numIdentificacionPa,email,numeroPa,password,config} = usuario;
+    const { nombrePa,apellidoPa,numIdentificacionPa,email,numeroPa,epsPa,password,config} = usuario;
 
     const onChange = (e) => {
         setUsuario({
@@ -35,6 +35,7 @@ const CrearCuenta = () => {
             apellidoPa:usuario.apellidoPa,
             numIdentificacionPa:usuario.numIdentificacionPa,
             email:usuario.email,
+            epsPa:usuario.epsPa,
             numeroPa:usuario.numeroPa,
             password:hashedPassword
 
@@ -130,6 +131,20 @@ const CrearCuenta = () => {
                                 value={numeroPa}
                                 onChange={onChange}
                                 />
+                                <div className="input-group-append">
+                                    <div className="input-group-text">
+                                        <span className="fas fa-user" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="input-group mb-3">
+                                <input type="text" 
+                                className="form-control" 
+                                name="epsPa" 
+                                id="espPa"
+                                placeholder="Eps a la que esta afiliado"
+                                value={epsPa} 
+                                onChange={onChange} />
                                 <div className="input-group-append">
                                     <div className="input-group-text">
                                         <span className="fas fa-user" />
