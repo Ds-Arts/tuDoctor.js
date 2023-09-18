@@ -1,16 +1,20 @@
 import React , { useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import APIInvoke from '../../utils/APIInvoke';
+import md5 from 'md5';
 import swai from 'sweetalert'
 
 const CrearCuenta = () => {
     const [usuario, setUsuario] = useState({
         nombre:'',
+        apellido:'',
+        numIdentificacionPa:'',
         email:'',
+        numero:'',
         password:'',
         confirmar:''
     })
-    const { nombrePa,email,password,config} = usuario;
+    const { nombrePa,apellidoPa,numIdentificacionPa,email,numeroPa,password,config} = usuario;
 
     const onChange = (e) => {
         setUsuario({
@@ -22,12 +26,17 @@ const CrearCuenta = () => {
     useEffect(() =>{
         document.getElementById("nombrePa").focus();
     },[])
+    // Obtén el hash MD5 de la contraseña
+    const hashedPassword = md5(usuario.password);
 
     const crearcuenta = async ()=>{
         const data ={
             nombrePa:usuario.nombrePa,
+            apellidoPa:usuario.apellidoPa,
+            numIdentificacionPa:usuario.numIdentificacionPa,
             email:usuario.email,
-            password:usuario.password
+            numeroPa:usuario.numeroPa,
+            password:hashedPassword
 
         }
         const response = await APIInvoke.invokePOST('/Paciente', data);
@@ -41,6 +50,7 @@ const CrearCuenta = () => {
     
 
     return (
+        
         <div className="hold-transition register-page">
             <div className="register-box">
                 <div className="register-logo">
@@ -66,6 +76,37 @@ const CrearCuenta = () => {
                                 </div>
                             </div>
                             <div className="input-group mb-3">
+                                <input type="text" 
+                                className="form-control" 
+                                name="apellidoPa" 
+                                id="apellidoPa"
+                                placeholder="Apellido completo"
+                                value={apellidoPa} 
+                                onChange={onChange} />
+                                <div className="input-group-append">
+                                    <div className="input-group-text">
+                                        <span className="fas fa-user" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div className="input-group mb-3">
+                            <input
+                                type="number"
+                                className="form-control"
+                                name="numIdentificacionPa"
+                                id="numIdentificacionPa"
+                                placeholder="Numero de identificacion"
+                                value={numIdentificacionPa}
+                                onChange={onChange}
+                                />
+                                <div className="input-group-append">
+                                    <div className="input-group-text">
+                                        <span className="fas fa-user" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="input-group mb-3">
                                 <input type="email" 
                                 className="form-control" 
                                 name="email" 
@@ -76,6 +117,22 @@ const CrearCuenta = () => {
                                 <div className="input-group-append">
                                     <div className="input-group-text">
                                         <span className="fas fa-envelope" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="input-group mb-3">
+                            <input
+                                type="number"
+                                className="form-control"
+                                name="numeroPa"
+                                id="numeroPa"
+                                placeholder="Numero de telefono"
+                                value={numeroPa}
+                                onChange={onChange}
+                                />
+                                <div className="input-group-append">
+                                    <div className="input-group-text">
+                                        <span className="fas fa-user" />
                                     </div>
                                 </div>
                             </div>
