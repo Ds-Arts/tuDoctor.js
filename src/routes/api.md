@@ -8,7 +8,6 @@
       "tipoDocumentoPa": "T.I",
       "numeroPa": 3138132399,
       "epsPa": "Famisanar",
-      "GeneroPa": true,
       "email": "Duvan@gmail.com",
       "password": "81dc9bdb52d04dc20036dbd8313ed055"
     },
@@ -19,7 +18,6 @@
       "apellidoPa": "torres",
       "numeroPa": 324567890,
       "epsPa": "Famisanar",
-      "GeneroPa": true,
       "email": "Camilo@gmail.com",
       "password": "827ccb0eea8a706c4c34a16891f84e7b"
     },
@@ -39,6 +37,35 @@
       "numeroPa": "123456789",
       "password": "4d186321c1a7f0f354b297e8914ab240",
       "id": 4
+    },
+    {
+      "nombrePa": "Camilo",
+      "apellidoPa": "Diaz",
+      "numIdentificacionPa": "1022940162",
+      "email": "duvansanchezle@gmail.com",
+      "numeroPa": "31182525428",
+      "password": "fcea920f7412b5da7be0cf42b8c93759",
+      "id": 5
+    },
+    {
+      "nombrePa": "duvan",
+      "apellidoPa": "Sanchez",
+      "numIdentificacionPa": "12345678",
+      "email": "dsanchez162@universal.edu.co",
+      "epsPa": "Famisanar",
+      "numeroPa": "123456789",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": 6
+    },
+    {
+      "nombrePa": "a",
+      "apellidoPa": "hola",
+      "numIdentificacionPa": "123",
+      "email": "dsanchez162@universal.edu.co",
+      "epsPa": "Famisanar",
+      "numeroPa": "1234",
+      "password": "202cb962ac59075b964b07152d234b70",
+      "id": 7
     }
   ],
   "Medico": [
@@ -47,7 +74,7 @@
       "nombreDoc": "Andres",
       "apellidoDoc": "Cordoba",
       "numeroDoc": 1234,
-      "espacializacion": "odontologo",
+      "especializacion": "odontologo",
       "disponibilidadDoc": true
     },
     {
@@ -55,24 +82,24 @@
       "nombreDoc": "Kevin",
       "apellidoDoc": "Mora",
       "numeroDoc": 12354,
-      "especializacionDoc": "cirujano",
+      "especializacion": "cirujano",
       "disponibilidadDoc": false
     }
   ],
   "Solicitud": [
     {
       "id": 1,
-      "fechaSoli": "2023-08-21T10:30:OOZ",
-      "PacienteFk": 1234,
-      "disponibilidadSoli": true,
-      "docFk": 1234
+      "fecha": "2023-08-21",
+      "hora": "10 pm",
+      "tipo": "odontologia",
+      "docFk": "Andres Cordoba"
     },
     {
       "id": 2,
-      "fechaSoli": "2023-08-31T10:30:OOZ",
-      "PacienteFk": 12356,
-      "disponibilidadSoli": false,
-      "docFk": 123
+      "fecha": "2023-08-31",
+      "hora": "10 am",
+      "tipo": "medicina general",
+      "docFk": "Kevin Mora"
     }
   ]
 }

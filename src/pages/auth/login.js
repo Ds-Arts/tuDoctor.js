@@ -117,9 +117,7 @@ class Login extends Component {
                     Crear Cuenta
                   </Link>
 
-                  <p className="mb-1">
-                    <Link to={"/recover"}>¿Olvidaste tu contraseña?</Link>
-                  </p>
+
                 </div>
               </form>
             </div>

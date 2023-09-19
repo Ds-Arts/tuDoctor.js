@@ -4,6 +4,7 @@ import APIInvoke from '../../utils/APIInvoke';
 import md5 from 'md5';
 
 const CrearCuenta = () => {
+    
     const [usuario, setUsuario] = useState({
         nombre:'',
         apellido:'',
@@ -69,7 +70,8 @@ const CrearCuenta = () => {
                                 id="nombrePa" 
                                 placeholder="Nombre completo"
                                 value={nombrePa} 
-                                onChange={onChange}/>
+                                onChange={onChange}
+                                required/>
                                 <div className="input-group-append">
                                     <div className="input-group-text">
                                         <span className="fas fa-user" />
@@ -83,7 +85,8 @@ const CrearCuenta = () => {
                                 id="apellidoPa"
                                 placeholder="Apellido completo"
                                 value={apellidoPa} 
-                                onChange={onChange} />
+                                onChange={onChange} 
+                                required/>
                                 <div className="input-group-append">
                                     <div className="input-group-text">
                                         <span className="fas fa-user" />
@@ -100,6 +103,7 @@ const CrearCuenta = () => {
                                 placeholder="Numero de identificacion"
                                 value={numIdentificacionPa}
                                 onChange={onChange}
+                                required
                                 />
                                 <div className="input-group-append">
                                     <div className="input-group-text">
@@ -114,7 +118,8 @@ const CrearCuenta = () => {
                                 id="email"
                                 placeholder="Correo electronico"
                                 value={email} 
-                                onChange={onChange} />
+                                onChange={onChange}
+                                required />
                                 <div className="input-group-append">
                                     <div className="input-group-text">
                                         <span className="fas fa-envelope" />
@@ -130,6 +135,7 @@ const CrearCuenta = () => {
                                 placeholder="Numero de telefono"
                                 value={numeroPa}
                                 onChange={onChange}
+                                required
                                 />
                                 <div className="input-group-append">
                                     <div className="input-group-text">
@@ -144,7 +150,8 @@ const CrearCuenta = () => {
                                 id="espPa"
                                 placeholder="Eps a la que esta afiliado"
                                 value={epsPa} 
-                                onChange={onChange} />
+                                onChange={onChange} 
+                                required/>
                                 <div className="input-group-append">
                                     <div className="input-group-text">
                                         <span className="fas fa-user" />
@@ -158,7 +165,8 @@ const CrearCuenta = () => {
                                 id="password"
                                 placeholder="Contraseña"
                                 value={password} 
-                                onChange={onChange} />
+                                onChange={onChange}
+                                required />
                                 <div className="input-group-append">
                                     <div className="input-group-text">
                                         <span className="fas fa-lock" />
